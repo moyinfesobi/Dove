@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes, FaDove } from "react-icons/fa";
-import { MdFingerprint } from "react-icons/md";
+// import { MdFingerprint } from "react-icons/md";
 import { Button } from "./Button";
 import './Navbar.css';
 
@@ -24,8 +24,8 @@ function Navbar() {
     <>
       <div className="navbar">
         <div className="navbar-container container">
-          <Link to="/" className="navbar-logo">
-            <MdFingerprint className="navbar-icon" />
+          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+            <FaDove className="navbar-icon" />
             DOVE
           </Link>
           <div className="menu-icon" onClick={handleClick}>
@@ -33,23 +33,23 @@ function Navbar() {
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <Link to="/" className="nav-links">
+              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/services" className="nav-links">
+              <Link to="/services" className="nav-links" onClick={closeMobileMenu}>
                 Services
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/products" className="nav-links">
+              <Link to="/products" className="nav-links" onClick={closeMobileMenu}>
                 Products
               </Link>
             </li>
             <li className="nav-btn">
               {button ? (
-                <Link to="/sign-up" className="btn-link">
+                <Link to="/sign-up" className="btn-link" onClick={closeMobileMenu}>
                   <Button  buttonStyle="btn--outline"> SIGN UP </Button>
                 </Link>
               ) : (
